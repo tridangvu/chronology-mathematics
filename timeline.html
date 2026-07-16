@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chronologie — Épisodes mathématiques</title>
+  <meta name="description" content="Chronologie des épisodes mathématiques.">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script defer src="assets/app.js"></script>
+</head>
+<body data-page="timeline">
+  <header class="site-header">
+    <a class="brand" href="index.html">Épisodes mathématiques</a>
+    <nav aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a class="active" href="timeline.html">Chronologie</a>
+    </nav>
+  </header>
+
+  <main class="shell page">
+    <header class="page-header">
+      <p class="eyebrow">Navigation principale</p>
+      <h1>Chronologie</h1>
+      <p>
+        Situer les épisodes les uns par rapport aux autres, puis suivre leurs
+        dépendances conceptuelles.
+      </p>
+    </header>
+
+    <section class="filters" aria-label="Filtres de la chronologie">
+      <label class="search-field">
+        <span>Rechercher</span>
+        <input id="search-input" type="search" placeholder="Euler, nombres premiers, permutations…">
+      </label>
+      <label>
+        <span>Domaine</span>
+        <select id="domain-filter">
+          <option value="">Tous les domaines</option>
+        </select>
+      </label>
+      <label>
+        <span>Niveau</span>
+        <select id="level-filter">
+          <option value="">Tous les niveaux</option>
+        </select>
+      </label>
+    </section>
+
+    <p class="result-count" id="result-count" aria-live="polite"></p>
+
+    <section class="timeline" id="timeline-list">
+      <p class="loading">Chargement de la chronologie…</p>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <p>Les dates servent à ordonner ; les pages conservent les incertitudes historiques.</p>
+  </footer>
+</body>
+</html>
