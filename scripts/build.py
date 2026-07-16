@@ -112,8 +112,14 @@ def main() -> int:
             source,
         )
         metadata["_source"] = source.name
+        protected_body = (
+            body.replace(r"\(", r"\\(")
+                .replace(r"\)", r"\\)")
+                .replace(r"\[", r"\\[")
+                .replace(r"\]", r"\\]")
+        )
         metadata["body_markdown"] = body
-        metadata["body_html"] = markdown(body)
+        metadata["body_html"] = markdown(protected_body)
         episodes.append(metadata)
 
     errors = validate(episodes)
