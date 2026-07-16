@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Math History Episode",
+  "type": "object",
+  "required": [
+    "id",
+    "slug",
+    "title",
+    "date_display",
+    "year_start",
+    "year_end",
+    "date_precision",
+    "mathematicians",
+    "domain_primary",
+    "theme_tags",
+    "level",
+    "status",
+    "summary",
+    "prerequisites",
+    "dependencies",
+    "descendants",
+    "related_episodes",
+    "optional_modules",
+    "sources_primary",
+    "sources_secondary",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "entry_code": {"type": ["string", "null"]},
+    "title": {"type": "string", "minLength": 1},
+    "subtitle": {"type": ["string", "null"]},
+    "date_display": {"type": "string", "minLength": 1},
+    "year_start": {"type": ["integer", "null"]},
+    "year_end": {"type": ["integer", "null"]},
+    "date_precision": {
+      "type": "string",
+      "enum": ["exact", "approximate", "range", "traditional", "disputed"]
+    },
+    "mathematicians": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "name": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "domain_primary": {"type": "string", "minLength": 1},
+    "domain_secondary": {"type": ["string", "null"]},
+    "theme_tags": {"type": "array", "items": {"type": "string"}},
+    "level": {"type": "string", "minLength": 1},
+    "status": {
+      "type": "string",
+      "enum": ["draft", "review", "published", "archived"]
+    },
+    "certainty_level": {
+      "type": ["string", "null"],
+      "enum": ["high", "medium", "low", "disputed", null]
+    },
+    "modernization_level": {
+      "type": ["string", "null"],
+      "enum": ["minimal", "moderate", "substantial", null]
+    },
+    "source_status": {"type": ["string", "null"]},
+    "notes_to_verify": {"type": "array", "items": {"type": "string"}},
+    "summary": {"type": "string"},
+    "prerequisites": {"type": "array", "items": {"type": "string"}},
+    "dependencies": {"type": "array", "items": {"type": "string"}},
+    "descendants": {"type": "array", "items": {"type": "string"}},
+    "related_episodes": {"type": "array", "items": {"type": "string"}},
+    "optional_modules": {"type": "array", "items": {"type": "string"}},
+    "sources_primary": {"type": "array"},
+    "sources_secondary": {"type": "array"},
+    "created_at": {"type": ["string", "null"], "format": "date"},
+    "updated_at": {"type": ["string", "null"], "format": "date"}
+  },
+  "additionalProperties": false
+}
