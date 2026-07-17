@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Épisodes mathématiques</title>
+  <meta name="description" content="Les mathématiques racontées comme une succession de problèmes, d’idées, de preuves et de transformations.">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <a class="brand" href="index.html">Épisodes mathématiques</a>
+    <nav aria-label="Navigation principale">
+      <a class="active" href="index.html">Accueil</a>
+      <a href="timeline.html">Chronologie</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <p class="eyebrow">Histoire technique et génétique des mathématiques</p>
+      <h1>Comprendre les mathématiques comme une succession d’actes intellectuels.</h1>
+      <p class="hero-intro">
+        Chaque épisode part d’un problème, reconstruit l’apparition d’une idée,
+        donne la preuve complète et situe ce qu’elle rend ensuite possible.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="timeline.html">Explorer la chronologie</a>
+        <a class="button button-secondary" href="#episodes">Voir les épisodes pilotes</a>
+      </div>
+      <dl class="site-stats" id="site-stats" aria-label="Statistiques du site">
+        <div><dt>Épisodes</dt><dd>—</dd></div>
+        <div><dt>Mathématiciens</dt><dd>—</dd></div>
+        <div><dt>Période</dt><dd>—</dd></div>
+      </dl>
+    </section>
+
+    <section class="shell section" id="episodes">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Prototype</p>
+          <h2>Trois épisodes pilotes</h2>
+        </div>
+        <a class="text-link" href="timeline.html">Toute la chronologie →</a>
+      </div>
+      <div class="episode-grid" id="featured-episodes">
+        <p class="loading">Chargement des épisodes…</p>
+      </div>
+    </section>
+
+    <section class="manifesto">
+      <div class="shell manifesto-grid">
+        <div>
+          <p class="eyebrow">Principe éditorial</p>
+          <h2>Un seul texte, plusieurs profondeurs de lecture.</h2>
+        </div>
+        <p>
+          La structure reste stable pour plus de mille épisodes, mais la prose
+          demeure fluide. Les dépendances sont explicites : une preuve peut
+          utiliser un résultat antérieur sans le redémontrer, à condition de
+          renvoyer vers l’épisode correspondant.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <p>Prototype statique — contenu Markdown, métadonnées YAML.</p>
+  </footer>
+</body>
+</html>
