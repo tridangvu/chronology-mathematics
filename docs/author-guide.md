@@ -1,5 +1,17 @@
 # Author guide
 
+## Quality first
+
+All articles are written and reviewed against the project quality reference:
+
+- [`quality-reference.md`](./quality-reference.md) — criteria C0–C7, review procedure, publication decisions (French, authoritative).
+- [`quality-validation-sheet.md`](./quality-validation-sheet.md) — copy into `reviews/` for each review.
+- [`../reviews/README.md`](../reviews/README.md) — where completed sheets live.
+
+**Do not set `status: published` until a filled sheet decides « prêt à publier » with no blocking defects.**
+
+Before drafting, fix the intended reader, the central problem, and the expected takeaway (the five sentences in C0). During drafting, use C0–C7. After drafting, fill the validation sheet.
+
 ## Create an article
 
 1. Copy `_template.md` to a new file named after the stable id, e.g. `fermat-little-theorem.md`.

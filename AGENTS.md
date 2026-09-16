@@ -30,6 +30,18 @@ This file records ordinary decisions for humans and coding agents working on the
 - Published articles must not reference unpublished targets (`npm run validate` enforces this).
 - Unverifiable historical claims stay `draft` with an explicit gap note.
 
+
+## Quality standard (mandatory)
+
+Authoritative document (French, v1.0): [`docs/quality-reference.md`](docs/quality-reference.md).
+
+- Design, draft, and review every article against criteria **C0–C7** plus readability/integrity.
+- Before setting `status: published`, complete a validation sheet from [`docs/quality-validation-sheet.md`](docs/quality-validation-sheet.md) and store it under [`reviews/`](reviews/) as `<article-id>--<YYYY-MM-DD>.md`.
+- Decision must be **prêt à publier** with no open blocking defects. Do not publish on length, reference count, or section completeness alone.
+- Mark AI-assisted reviews as such; they are not independent human review.
+- After substantive changes to statement, proof, attribution, or application, renew the corresponding controls.
+- Pedagogical priority: the reader understands a problem, acquires a new idea, sees why it works, and what it enables. Historical facts that are asserted must be accurate, sourced, and distinguished from pedagogical reconstructions.
+
 ## Commands agents should use
 
 ```bash

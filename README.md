@@ -29,7 +29,13 @@ Production URL (after GitHub Pages is enabled):
 2. Fill frontmatter; write the body in Markdown with `\(` `\)` / `\[` `\]` math.
 3. Run `npm run validate` then `npm run build`.
 
-See `docs/author-guide.md` and `AGENTS.md`.
+See `docs/author-guide.md`, `docs/quality-reference.md` (quality standard), and `AGENTS.md`.
+
+
+## Quality
+
+Article quality is governed by [`docs/quality-reference.md`](docs/quality-reference.md) (v1.0).  
+Publication requires a completed validation sheet under [`reviews/`](reviews/) with decision **prêt à publier**.
 
 ## Licence
 

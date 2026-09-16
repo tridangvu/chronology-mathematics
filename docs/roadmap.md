@@ -21,3 +21,7 @@ Reserved frontmatter (`problemsPath`) exists so authors can tag exercises early.
 - Expand beyond quadratic residues (Greek geometry, calculus landmarks, algebra, probability, …)
 - Fully expanded reciprocity proof article
 - Better period taxonomy and pagination when the catalogue grows
+
+## Quality gate
+
+All published articles must pass [`quality-reference.md`](./quality-reference.md) with a sheet in `reviews/`.
