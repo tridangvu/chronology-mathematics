@@ -1,0 +1,133 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+import {
+  getArticles,
+  articleHref,
+  withBase,
+  resolveVisible,
+  continuationsOf,
+} from '../../lib/articles';
+
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  return articles.map((article) => ({
+    params: { slug: article.data.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content, headings } = await render(article);
+const visible = await getArticles();
+const prereqs = resolveVisible(article.data.prerequisites, visible);
+const related = article.data.relations
+  .map((r) => {
+    const target = visible.find((a) => a.data.id === r.target);
+    return target ? { relation: r, target } : null;
+  })
+  .filter(Boolean);
+const next = continuationsOf(article, visible);
+---
+<BaseLayout title={article.data.title} description={article.data.summary}>
+  <p class="meta">
+    <a href={withBase('chronology/')}>← Chronology</a>
+    · {article.data.landmark.label}
+    · {article.data.type}
+    {
+      article.data.status === 'draft' && (
+        <span class="badge badge--draft">Draft — local preview only</span>
+      )
+    }
+  </p>
+  <h1>{article.data.title}</h1>
+  <p class="lead">{article.data.summary}</p>
+  <ul class="domain-list">
+    {article.data.domains.map((d) => <li class="badge">{d}</li>)}
+  </ul>
+  {
+    article.data.historicalAuthors.length > 0 && (
+      <p class="meta">Historical authors: {article.data.historicalAuthors.join(', ')}</p>
+    )
+  }
+
+  <TableOfContents headings={headings} />
+
+  <article class="prose" data-pagefind-body>
+    <Content />
+  </article>
+
+  <section class="related">
+    <h2>Prerequisites &amp; continuations</h2>
+    {
+      prereqs.length > 0 ? (
+        <div>
+          <h3>Reading prerequisites</h3>
+          <ul>
+            {prereqs.map((p) => (
+              <li>
+                <a href={articleHref(p)}>{p.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <p class="meta">No published reading prerequisites listed.</p>
+      )
+    }
+    {
+      related.length > 0 && (
+        <div>
+          <h3>Relations</h3>
+          <ul>
+            {related.map((item) => (
+              <li>
+                <span class="badge">{item!.relation.type}</span>{' '}
+                <a href={articleHref(item!.target)}>{item!.target.data.title}</a>
+                {item!.relation.note ? ` — ${item!.relation.note}` : ''}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+    {
+      next.length > 0 && (
+        <div>
+          <h3>Continues in</h3>
+          <ul>
+            {next.map((n) => (
+              <li>
+                <a href={articleHref(n)}>{n.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+  </section>
+
+  {
+    article.data.references.length > 0 && (
+      <section class="related">
+        <h2>References</h2>
+        <ol>
+          {article.data.references.map((r) => (
+            <li id={`ref-${r.id}`}>
+              {r.citation}
+              {r.url && (
+                <>
+                  {' '}
+                  <a href={r.url} rel="noopener noreferrer">
+                    link
+                  </a>
+                </>
+              )}
+            </li>
+          ))}
+        </ol>
+      </section>
+    )
+  }
+</BaseLayout>

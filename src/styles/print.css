@@ -1,0 +1,50 @@
+@media print {
+  :root {
+    --bg: #fff;
+    --bg-elevated: #fff;
+    --ink: #000;
+    --ink-muted: #333;
+  }
+
+  body {
+    background: #fff;
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+
+  .site-header,
+  .site-nav,
+  .filters,
+  .search-host,
+  .site-footer,
+  .no-print {
+    display: none !important;
+  }
+
+  .page {
+    max-width: none;
+    width: auto;
+    padding: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #444;
+  }
+
+  .theorem-block {
+    break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+}

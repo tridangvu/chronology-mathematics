@@ -1,0 +1,36 @@
+---
+/**
+ * Dev-only technical math QA page (not a historical article).
+ * Removed from production dist/ by the exclude-dev-pages integration.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MathQaBody from '../components/MathQaBody.md';
+import { withBase } from '../lib/articles';
+
+const isProd = import.meta.env.PROD;
+---
+<BaseLayout title="Math QA (dev)" description="Technical KaTeX QA page for local development.">
+  <div data-pagefind-ignore>
+    {
+      isProd ? (
+        <p>
+          This page is for local development only. If you see this in a production build artifact
+          before the cleanup hook runs, report a bug.
+        </p>
+      ) : (
+        <>
+          <p class="badge badge--draft">Dev only</p>
+          <h1>Technical math QA</h1>
+          <p class="lead">
+            Not a chronology article. Use this page to verify delimiters, macros, aligned
+            environments, and scroll behaviour.{' '}
+            <a href={withBase('')}>Back home</a>.
+          </p>
+          <article class="prose">
+            <MathQaBody />
+          </article>
+        </>
+      )
+    }
+  </div>
+</BaseLayout>

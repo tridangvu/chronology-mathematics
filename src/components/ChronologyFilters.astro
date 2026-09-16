@@ -1,0 +1,45 @@
+---
+interface Props {
+  periods: string[];
+  domains: string[];
+}
+const { periods, domains } = Astro.props;
+---
+<div class="filters no-print" data-chronology-filters>
+  <label>
+    Period
+    <select name="period" data-filter="period">
+      <option value="">All periods</option>
+      {periods.map((p) => <option value={p}>{p}</option>)}
+    </select>
+  </label>
+  <label>
+    Domain
+    <select name="domain" data-filter="domain">
+      <option value="">All domains</option>
+      {domains.map((d) => <option value={d}>{d}</option>)}
+    </select>
+  </label>
+</div>
+<script>
+  function applyFilters() {
+    const root = document.querySelector('[data-chronology-filters]');
+    if (!root) return;
+    const period = (root.querySelector('[data-filter="period"]') as HTMLSelectElement)?.value ?? '';
+    const domain = (root.querySelector('[data-filter="domain"]') as HTMLSelectElement)?.value ?? '';
+    document.querySelectorAll<HTMLElement>('[data-period]').forEach((el) => {
+      const p = el.dataset.period ?? '';
+      const domains = (el.dataset.domains ?? '').split('|').filter(Boolean);
+      const okPeriod = !period || p === period;
+      const okDomain = !domain || domains.includes(domain);
+      el.hidden = !(okPeriod && okDomain);
+    });
+    document.querySelectorAll<HTMLElement>('[data-period-group]').forEach((group) => {
+      const visible = group.querySelectorAll('[data-period]:not([hidden])').length;
+      group.hidden = visible === 0;
+    });
+  }
+  document.querySelectorAll('[data-filter]').forEach((el) => {
+    el.addEventListener('change', applyFilters);
+  });
+</script>

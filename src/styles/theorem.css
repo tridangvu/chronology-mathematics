@@ -1,0 +1,47 @@
+/* Definition / proposition / proof / example / remark blocks */
+.theorem-block {
+  margin: 1.35rem 0;
+  padding: 0.85rem 1rem 0.95rem;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-elevated);
+}
+
+.theorem-block > .theorem-label {
+  font-family: var(--font-ui);
+  font-weight: 650;
+  font-size: 0.95rem;
+  margin: 0 0 0.35rem;
+}
+
+.theorem-block--definition {
+  border-left-color: #3d6b4f;
+}
+
+.theorem-block--proposition,
+.theorem-block--theorem,
+.theorem-block--lemma {
+  border-left-color: var(--accent);
+}
+
+.theorem-block--proof {
+  border-left-color: #6b5a3d;
+  background: transparent;
+  border-left-style: dashed;
+}
+
+.theorem-block--example {
+  border-left-color: #6e3d6b;
+}
+
+.theorem-block--remark {
+  border-left-color: var(--rule);
+  background: transparent;
+}
+
+.theorem-block--proof::after {
+  content: "□";
+  display: block;
+  text-align: right;
+  margin-top: 0.35rem;
+  color: var(--ink-muted);
+}

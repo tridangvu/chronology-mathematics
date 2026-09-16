@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getArticles, articleHref, withBase } from '../lib/articles';
+
+const articles = await getArticles();
+const published = articles.filter((a) => a.data.status === 'published');
+const recent = published.slice(0, 6);
+---
+<BaseLayout title="Chronology of mathematics" description="A chronological encyclopaedia of mathematics, with carefully linked articles and build-time mathematics.">
+  <h1>Chronology of mathematics</h1>
+  <p class="lead">
+    A durable static encyclopaedia organised by historical landmarks. Articles are written in Markdown,
+    validated at build time, and linked by reading prerequisites and historical relations.
+  </p>
+
+  <div class="card-grid">
+    <a class="card" href={withBase('chronology/')}>
+      <h2>Chronology</h2>
+      <p class="meta">Browse entries by period, date, domain, and summary.</p>
+    </a>
+    <a class="card" href={withBase('search/')}>
+      <h2>Search</h2>
+      <p class="meta">Full-text search over published articles (Pagefind).</p>
+    </a>
+    <a class="card" href={withBase('method/')}>
+      <h2>Editorial method</h2>
+      <p class="meta">How we date, cite, and connect mathematical ideas.</p>
+    </a>
+  </div>
+
+  <h2>Pilot articles</h2>
+  <ul class="chronology">
+    {
+      recent.map((a) => (
+        <li class="chronology-item">
+          <div class="chronology-item__date">{a.data.landmark.label}</div>
+          <div>
+            <p class="chronology-item__title">
+              <a href={articleHref(a)}>{a.data.title}</a>
+              {a.data.status === 'draft' && <span class="badge badge--draft">Draft</span>}
+            </p>
+            <p class="chronology-item__summary">{a.data.summary}</p>
+            <ul class="domain-list">
+              {a.data.domains.map((d) => (
+                <li class="badge">{d}</li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

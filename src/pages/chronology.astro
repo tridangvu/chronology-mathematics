@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ChronologyFilters from '../components/ChronologyFilters.astro';
+import { getArticles, articleHref } from '../lib/articles';
+import { groupByPeriod, uniqueDomains, uniquePeriods } from '../lib/chronology';
+
+const articles = await getArticles();
+const groups = groupByPeriod(articles);
+const periods = uniquePeriods(articles);
+const domains = uniqueDomains(articles);
+---
+<BaseLayout
+  title="Chronology"
+  description="Vertical chronology of mathematical landmarks, grouped by period."
+  wide
+>
+  <h1>Chronology</h1>
+  <p class="lead">
+    Entries are ordered by documented landmark sort keys within period groups.
+    Filters are client-side and pagination-ready (all current entries fit on one page).
+  </p>
+
+  <ChronologyFilters periods={periods} domains={domains} />
+
+  {
+    groups.map((g) => (
+      <section class="chronology-period" data-period-group={g.period}>
+        <h2>{g.period}</h2>
+        <ol class="chronology">
+          {g.articles.map((a) => (
+            <li
+              class="chronology-item"
+              data-period={a.data.period}
+              data-domains={a.data.domains.join('|')}
+            >
+              <div class="chronology-item__date">
+                {a.data.landmark.label}
+                {a.data.landmark.precision !== 'exact' && (
+                  <span class="meta"> · {a.data.landmark.precision}</span>
+                )}
+              </div>
+              <div>
+                <p class="chronology-item__title">
+                  <a href={articleHref(a)}>{a.data.title}</a>
+                  {a.data.status === 'draft' && (
+                    <span class="badge badge--draft">Draft</span>
+                  )}
+                </p>
+                <p class="chronology-item__summary">{a.data.summary}</p>
+                <ul class="domain-list">
+                  {a.data.domains.map((d) => (
+                    <li class="badge">{d}</li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+    ))
+  }
+</BaseLayout>

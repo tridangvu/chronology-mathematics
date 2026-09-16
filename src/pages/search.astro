@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SearchBox from '../components/SearchBox.astro';
+---
+<BaseLayout title="Search" description="Full-text search across published articles.">
+  <h1>Search</h1>
+  <p class="lead">Search indexes are generated at build time. Run a production build locally before expecting results in <code>astro dev</code>.</p>
+  <SearchBox />
+</BaseLayout>

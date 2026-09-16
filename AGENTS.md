@@ -1,0 +1,53 @@
+# AGENTS.md — editorial and technical decisions
+
+This file records ordinary decisions for humans and coding agents working on the site.
+
+## Product
+
+- **Title:** Chronology of mathematics (English).
+- **Repo name:** `chronology-mathematics` (GitHub Pages project site under `/chronology-mathematics/`).
+- **Static only:** no app server, database, or admin UI.
+- Prefer **Markdown** over MDX unless a real component is required.
+- Separate content (`src/content`), presentation (`src/styles`, layouts), and logic (`src/lib`, `scripts`).
+
+## Stack decisions
+
+| Choice | Decision | Why |
+| --- | --- | --- |
+| Astro | **5.18.2** | Latest Astro 5.x fitting box Node **20.19.2**; Astro 6.0.6+ / 7 need Node 22+. |
+| Content | `src/content.config.ts` + Zod | Official collections API with `glob` loader. |
+| Math | `remark-math-extended` + `rehype-katex` | Build-time KaTeX; supports `\(` `\)` / `\[` `\]` (and `$$`). |
+| Macros | `src/lib/math-macros.ts` | Single source of truth. |
+| Search | `astro-pagefind` | Indexes `dist/` after build; drafts absent from prod HTML. |
+| Deploy | GitHub Actions + `withastro/action` | Official Pages path; set `site` + `base`. |
+
+## Editorial rules
+
+- Every article has a stable `id`, `slug`, landmark with `sortKey` + `precision`, domains, status.
+- Relation types: `reading-prerequisite` | `used-historically` | `generalizes` | `alternate-proof` | `application`.
+- `problemsPath` fields are reserved in the schema; **do not build that UI yet**.
+- Drafts: visible in `astro dev` with a badge; **excluded** from production pages, Pagefind, and sitemap.
+- Published articles must not reference unpublished targets (`npm run validate` enforces this).
+- Unverifiable historical claims stay `draft` with an explicit gap note.
+
+## Commands agents should use
+
+```bash
+npm install
+npm run validate
+npm run build
+npm run dev
+npm run preview
+```
+
+## Math failures
+
+Invalid KaTeX fails the build via `rehypeFailKatex`, naming the article path. Do not weaken `strict: 'error'` without documenting why in this file.
+
+## Dev-only page
+
+`/math-qa/` is a technical fixture, not a historical article. It is stripped from `dist/` after production build by `excludeDevPages`.
+
+## Out of scope (v1)
+
+- Problems-path UI, user accounts, comments, runtime CMS, MDX-heavy interactive widgets.

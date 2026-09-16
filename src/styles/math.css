@@ -1,0 +1,27 @@
+/* Long formulas scroll in their own container */
+.math-display-scroll,
+.katex-display {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.35rem 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.katex-display > .katex {
+  white-space: nowrap;
+  text-align: left;
+  /* keep centered look when short; still scroll when long */
+}
+
+.katex-error {
+  color: #a40000 !important;
+  background: #ffe8e8;
+  padding: 0.1em 0.25em;
+}
+
+/* Inline math vertical rhythm */
+.katex {
+  font-size: 1.05em;
+}

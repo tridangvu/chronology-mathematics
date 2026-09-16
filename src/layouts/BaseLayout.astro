@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+import '../styles/theorem.css';
+import '../styles/math.css';
+import '../styles/print.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  wide?: boolean;
+}
+
+const { title, description = 'A chronological encyclopaedia of mathematics.', wide = false } =
+  Astro.props;
+const pageTitle = title === 'Chronology of mathematics' ? title : `${title} · Chronology of mathematics`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <title>{pageTitle}</title>
+    <link rel="stylesheet" href={`${import.meta.env.BASE_URL}katex.min.css`} />
+  </head>
+  <body>
+    <Header />
+    <main class:list={['page', wide && 'page--wide']}>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

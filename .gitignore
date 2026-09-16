@@ -1,0 +1,21 @@
+# build
+dist/
+.astro/
+
+# deps
+node_modules/
+
+# env / OS
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+.npm/
+
+# editor
+.vscode/
+.idea/
+
+# pagefind local cache (indexed output lives in dist/)
+pagefind/

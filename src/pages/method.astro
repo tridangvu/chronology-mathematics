@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Editorial method" description="Dating, citation, and linking conventions for the chronology.">
+  <h1>Editorial method</h1>
+  <p class="lead">
+    This site is a chronology first: each article is anchored to a historical landmark, then linked
+    by prerequisites and typed relations.
+  </p>
+
+  <h2>Dating</h2>
+  <p>
+    Every article carries a <strong>landmark</strong> with a display label, a numeric
+    <code>sortKey</code> for ordering, and a precision flag:
+  </p>
+  <ul>
+    <li><code>exact</code> — year (or finer) is well attested;</li>
+    <li><code>approx</code> — circa dating;</li>
+    <li><code>uncertain</code> — scholarly disagreement;</li>
+    <li><code>bce</code> — BCE landmark (sortKey negative);</li>
+    <li><code>unknown</code> — date unknown (<code>sortKey: null</code>), with a note.</li>
+  </ul>
+
+  <h2>Sources</h2>
+  <p>
+    Bibliographic references live in frontmatter and are cited in the body. Unverifiable claims
+    stay in <span class="badge badge--draft">draft</span> status with explicit gap notes.
+  </p>
+
+  <h2>Relations</h2>
+  <p>Typed links between articles:</p>
+  <ul>
+    <li><code>reading-prerequisite</code> — needed to follow the modern exposition;</li>
+    <li><code>used-historically</code> — historically employed in the discovery or proof;</li>
+    <li><code>generalizes</code> — later generalisation;</li>
+    <li><code>alternate-proof</code> — another proof of the same result;</li>
+    <li><code>application</code> — notable application.</li>
+  </ul>
+
+  <h2>Mathematics</h2>
+  <p>
+    Formulas use KaTeX at build time with <code>\(…\)</code> / <code>\[…\]</code> delimiters
+    (and <code>$$…$$</code> for display). Invalid math fails the build and names the article.
+    See <code>docs/math-subset.md</code> in the repository.
+  </p>
+
+  <h2>Drafts</h2>
+  <p>
+    Drafts appear in local preview with a clear badge, but are excluded from production builds,
+    Pagefind indexing, and the sitemap. Published pages never link to unpublished targets.
+  </p>
+</BaseLayout>

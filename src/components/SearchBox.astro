@@ -1,0 +1,22 @@
+---
+/**
+ * Pagefind UI — indexes are generated at build time by astro-pagefind.
+ * @see https://pagefind.app/docs/
+ */
+import PagefindConfig from 'astro-pagefind/components/PagefindConfig.astro';
+---
+<div class="search-host no-print">
+  <PagefindConfig />
+  <pagefind-searchbox></pagefind-searchbox>
+</div>
+<style is:global>
+  pagefind-searchbox {
+    --pagefind-ui-scale: 0.95;
+    --pagefind-ui-primary: #2c4a6e;
+    --pagefind-ui-text: #1a1a1a;
+    --pagefind-ui-background: #fffdf8;
+    --pagefind-ui-border: #c9c0b2;
+    --pagefind-ui-font: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+    display: block;
+  }
+</style>
