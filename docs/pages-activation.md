@@ -17,3 +17,9 @@ base: '/chronology-mathematics'
 ```
 
 If you later use a custom domain, update `site`, remove `base`, and follow Astro’s Pages guide.
+
+
+## Note on Actions workflow files
+
+If `.github/workflows/` is missing on GitHub, the push token lacked the `workflow` scope.
+See `docs/workflows-pending.md` for how to add `ci.yml` and `deploy.yml`.
