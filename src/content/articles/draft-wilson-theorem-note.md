@@ -22,6 +22,16 @@ references:
     citation: "Ireland–Rosen, A Classical Introduction to Modern Number Theory, exercise/discussion of Wilson’s theorem."
 ---
 
+<!-- Landmarks: frontmatter/header only. Draft fixture — not developed under v1.1 structure. -->
+
+## Motivation and history
+
+<!-- Stub: intended problem — for which n is (n−1)! ≡ −1 (mod n)? Historical attribution to Wilson / Lagrange. -->
+
+## Statement or definition
+
+<!-- Gap: full statement of Wilson’s theorem not yet written in this draft fixture. -->
+
 ## Gap note
 
-This stub is intentionally **draft**. It exists so CI and local preview can verify draft badges and production exclusion. Do not link to it from published articles.
+This stub is intentionally **draft**. It exists so CI and local preview can verify draft badges and production exclusion. Do not link to it from published articles. Scientific content under the v1.1 default structure is not developed here.

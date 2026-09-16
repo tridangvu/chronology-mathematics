@@ -20,6 +20,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <li><code>bce</code> — BCE landmark (sortKey negative);</li>
     <li><code>unknown</code> — date unknown (<code>sortKey: null</code>), with a note.</li>
   </ul>
+  <p>
+    Landmark metadata (title, summary, authors, domain, dates, prerequisites) appears in the
+    article header from frontmatter; it is not duplicated as a body section.
+  </p>
+
+  <h2>Article structure</h2>
+  <p>Default body sections on the English site (adaptable; omit empty optional headings):</p>
+  <ol>
+    <li><strong>Motivation and history</strong></li>
+    <li><strong>Statement or definition</strong></li>
+    <li><strong>Approach and proof</strong> (central idea + complete justification)</li>
+    <li><strong>Example</strong> (optional)</li>
+    <li><strong>Comments</strong> (optional)</li>
+    <li><strong>Later developments</strong></li>
+    <li><strong>Sources</strong></li>
+  </ol>
+  <p>
+    An old result may be stated and proved in modern language. The main proof may be a
+    modernised historical proof or a different modern proof; state its relation to the
+    historical contribution. There is no mandatory historical-then-modern double presentation.
+  </p>
 
   <h2>Sources</h2>
   <p>
@@ -44,18 +65,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     See <code>docs/math-subset.md</code> in the repository.
   </p>
 
-
   <h2>Quality standard</h2>
   <p>
     Article design, drafting, and review follow the project quality reference
     (criteria C0–C7): a successful article lets the intended reader understand a
     problem, acquire a new mathematical idea, see why it works, and recognise what
     it enables. Historical claims that are made must be accurate, sourced, and
-    distinguished from pedagogical reconstructions.
+    distinguished from pedagogical reconstructions. Complete justification belongs
+    in <strong>Approach and proof</strong>; <strong>Example</strong> and
+    <strong>Comments</strong> are optional.
   </p>
   <p>
     The authoritative document lives in the repository as
-    <code>docs/quality-reference.md</code> (French, v1.0). Before an article is
+    <code>docs/quality-reference.md</code> (French, <strong>v1.1</strong>). Before an article is
     marked published, a completed validation sheet under <code>reviews/</code> must
     decide <strong>prêt à publier</strong> with no open blocking defects. Length,
     reference count, or section completeness alone do not prove quality.

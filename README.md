@@ -27,15 +27,15 @@ Production URL (after GitHub Pages is enabled):
 
 1. Copy `src/content/articles/_template.md` to `src/content/articles/your-id.md` (no leading underscore).
 2. Fill frontmatter; write the body in Markdown with `\(` `\)` / `\[` `\]` math.
-3. Run `npm run validate` then `npm run build`.
+3. Follow the default structure in `docs/quality-reference.md` (v1.1): Motivation and history → Statement or definition → Approach and proof → Example (optional) → Comments (optional) → Later developments → Sources. Landmarks stay in frontmatter.
+4. Run `npm run validate` then `npm run build`.
 
 See `docs/author-guide.md`, `docs/quality-reference.md` (quality standard), and `AGENTS.md`.
 
-
 ## Quality
 
-Article quality is governed by [`docs/quality-reference.md`](docs/quality-reference.md) (v1.0).  
-Publication requires a completed validation sheet under [`reviews/`](reviews/) with decision **prêt à publier**.
+Article quality is governed by [`docs/quality-reference.md`](docs/quality-reference.md) (**v1.1**, French authoritative).  
+Publication requires a completed validation sheet under [`reviews/`](reviews/) with decision **prêt à publier**. Older sheets live in [`reviews/archive/`](reviews/archive/) and do not count under v1.1.
 
 ## Licence
 

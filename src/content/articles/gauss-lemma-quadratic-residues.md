@@ -35,7 +35,15 @@ references:
 updated: 2026-09-16
 ---
 
-## Statement
+<!-- Landmarks: frontmatter/header only. Migration note: see docs/editorial-migration-notes.md for C3 depth gaps. -->
+
+## Motivation and history
+
+Gauss introduced a counting argument on least absolute residues in the *Disquisitiones Arithmeticae* (1801) as part of his apparatus for quadratic residues and the law of quadratic reciprocity [[gauss-da](#ref-gauss-da)]. The practical question is: given an odd prime \(p\) and an integer \(a\) not divisible by \(p\), how can one decide the sign of the Legendre symbol \(\legendre{a}{p}\) by a finite, transparent count rather than by searching for a square root modulo \(p\)?
+
+Modern textbooks isolate the argument as “Gauss’s lemma” and use it as a short bridge between Euler’s criterion and reciprocity [[ireland-rosen](#ref-ireland-rosen)] [[niven](#ref-niven)].
+
+## Statement or definition
 
 Let \(p\) be an odd prime and let \(a\) be an integer not divisible by \(p\). For each integer \(k\) with \(1 \le k \le (p-1)/2\), choose the unique integer \(r_k\) in the open interval \(\bigl(-(p/2),\, p/2\bigr)\) such that
 
@@ -51,11 +59,9 @@ r_k \equiv k a \pmod{p}.
 
 In particular, \(a\) is a quadratic residue modulo \(p\) if and only if \(\mu\) is even.
 
-## Historical note
+## Approach and proof
 
-Gauss introduced this counting argument in the *Disquisitiones Arithmeticae* (1801) as part of his apparatus for quadratic residues and the law of quadratic reciprocity [[gauss-da](#ref-gauss-da)]. Modern textbooks isolate it as “Gauss’s lemma” and use it as a short bridge between Euler’s criterion and reciprocity [[ireland-rosen](#ref-ireland-rosen)] [[niven](#ref-niven)].
-
-## Proof sketch
+<!-- Status: modern textbook packaging of Gauss’s counting argument; relation to the historical contribution: same counting idea as in DA, rewritten in \(\F_p\) language. -->
 
 Work in the field \(\F_p\). The integers
 
@@ -83,13 +89,21 @@ The product of the \(k\) is nonzero modulo \(p\), so it cancels, and we obtain
 a^{(p-1)/2} \equiv (-1)^{\mu} \pmod{p}.
 \]
 
-Euler’s criterion identifies the left-hand side with \(\legendre{a}{p}\), which completes the proof.
-
-<div class="theorem-block theorem-block--remark">
-<p class="theorem-label">Remark.</p>
-<p>The same counting can be phrased with representatives in \(\{1,\dots,p-1\}\) and a floor-function formula for \(\mu\); see Ireland–Rosen for that packaging.</p>
-</div>
+Euler’s criterion (admitted as a prerequisite) identifies the left-hand side with \(\legendre{a}{p}\), which completes the proof.
 
 ## Example
 
 Take \(p = 7\) and \(a = 3\). Then \((p-1)/2 = 3\), and the products are \(3,6,9\). Least absolute residues modulo \(7\) are \(3\), \(-1\), and \(2\). Exactly one is negative, so \(\mu = 1\) and \(\legendre{3}{7} = -1\). Direct check: the squares modulo \(7\) are \(0,1,2,4\), so \(3\) is indeed a nonresidue.
+
+## Comments
+
+The same counting can be phrased with representatives in \(\{1,\dots,p-1\}\) and a floor-function formula for \(\mu\); see Ireland–Rosen for that packaging [[ireland-rosen](#ref-ireland-rosen)].
+
+## Later developments
+
+Gauss used the lemma as a step toward the law of quadratic reciprocity; see the article on that law for the dependence and for the open task of fully expanding the lattice-count bookkeeping.
+
+## Sources
+
+- [[gauss-da](#ref-gauss-da)] — original locus in the *Disquisitiones*.
+- [[ireland-rosen](#ref-ireland-rosen)], [[niven](#ref-niven)] — modern expositions of the lemma.

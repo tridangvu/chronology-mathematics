@@ -1,6 +1,6 @@
 ---
 # Copy this file to a new `kebab-case.md` (do not keep the leading underscore).
-# Quality: follow docs/quality-reference.md (C0–C7). Fill a validation sheet before publishing.
+# Quality: follow docs/quality-reference.md (v1.1, C0–C7). Fill a validation sheet before publishing.
 # See docs/author-guide.md.
 id: example-article-id
 slug: example-article-id
@@ -11,14 +11,14 @@ domains:
   - number-theory
 historicalAuthors:
   - "Name, Forename"
-status: draft # draft | published — publish only after reviews/ sheet = prêt à publier
+status: draft # draft | published — publish only after reviews/ sheet = prêt à publier (v1.1)
 period: "1800–1849"
 landmark:
   label: "1801"
   sortKey: 1801
   precision: exact # exact | approx | uncertain | unknown | bce
   # note: "optional dating note — meaning of this date (formulation / publication / proof / …)"
-prerequisites: [] # reading tools actually used in the main body
+prerequisites: [] # reading tools actually used in Approach and proof
 relations: []
   # - target: other-article-id
   #   type: reading-prerequisite # reading-prerequisite | used-historically | generalizes | alternate-proof | application
@@ -35,37 +35,32 @@ references:
 ---
 
 <!-- Before writing: answer C0's five sentences (reader already knows / seeks / difficulty / new idea / will know). -->
-
-## Landmarks
-
-Title, contribution summary, date or period explained, historical authors, domain, prerequisites. Distinguish formulation / publication / first proof when relevant.
+<!-- Landmarks (title, summary, authors, domain, dates, prerequisites) come from frontmatter/header only — do not duplicate them as a body section. -->
 
 ## Motivation and history
 
-State the problem precisely enough that a answer would be recognisable (C1). Explain the obstacle with the announced prerequisites. Document historical motivations; mark pedagogical reconstructions as such.
+<!-- C1: State the problem precisely enough that an answer would be recognisable. Explain the obstacle with the announced prerequisites. Document historical motivations; mark pedagogical reconstructions as such. -->
 
 ## Statement or definition
 
-Modern language; hypotheses and quantifiers explicit (C2). Give an elementary example. Distinguish the historical contribution from the version exposed here.
+<!-- C2: Modern language; hypotheses and quantifiers explicit. An old result may be stated directly in modern form. Distinguish the historical contribution from the version exposed here — without a mandatory historical-then-modern double presentation. Elementary reading examples may go here or under Example. -->
 
 ## Approach and proof
 
-Central idea articulated to the problem (C3 — pedagogical core). Mark status: rewritten published proof / documented discovery path / pedagogical reconstruction. Flag modern tools and admitted results.
+<!-- C3 (pedagogical core): central idea + complete justification relative to announced prerequisites and explicitly admitted auxiliary results. Choose the most illuminating exposition: modernised historical proof OR a different modern proof; state its relation to the historical contribution. Mark status (rewritten published proof / other modern proof / documented discovery path / pedagogical reconstruction). Flag admitted results. Do not silently correct a false statement — fix the statement. -->
 
-## Immediate payoff
+<!-- ## Example (optional — omit this heading if empty)
+C4: One application or illustration that uses the central idea and reaches an interpreted conclusion. Examples may also be integrated elsewhere; if so, still evaluate that content under C4. -->
 
-One application or illustration that uses the central idea and reaches an interpreted conclusion (C4).
-
-## Modern viewpoint
-
-Additional prerequisites if needed; complete justification relative to declared prerequisites (C5). Do not silently correct a false statement from the main body.
+<!-- ## Comments (optional — omit this heading if empty)
+C5: Optional remarks, variants, structural viewpoint, limits. Not the seat of mandatory complete justification (that belongs in Approach and proof). If comments are integrated elsewhere, evaluate under C5. -->
 
 ## Later developments
 
-Natural next questions with typed links and one-sentence rationale (C6). Future articles are paths, not dead links.
+<!-- C6: Natural next questions with typed links and one-sentence rationale. Future articles are paths, not dead links. -->
 
 ## Sources
 
-Precise references for every substantial historical claim (C7). Distinguish roles; mark sources not consulted.
+<!-- C7: Precise references for every substantial historical claim. Distinguish roles; mark sources not consulted. Frontmatter `references` may carry the bibliography; body notes can point to them. -->
 
-<!-- Before `status: published`: copy docs/quality-validation-sheet.md → reviews/<id>--<date>.md and obtain prêt à publier. -->
+<!-- Before `status: published`: copy docs/quality-validation-sheet.md → reviews/<id>--<date>.md (référentiel v1.1) and obtain prêt à publier. -->

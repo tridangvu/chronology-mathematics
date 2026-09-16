@@ -35,7 +35,13 @@ references:
 updated: 2026-09-16
 ---
 
-## Definitions
+<!-- Landmarks: frontmatter/header only. Migration note: see docs/editorial-migration-notes.md (Fermat / cyclicity not listed as prerequisites). -->
+
+## Motivation and history
+
+Euler investigated power residues extensively in the eighteenth century. A recurring question is: for an odd prime \(p\) and an integer \(a\) not divisible by \(p\), how can one decide whether \(a\) is a square modulo \(p\) by an arithmetic test on powers of \(a\)? Legendre’s symbol \(\legendre{a}{p}\) later gave a compact notation that made reciprocity statements easy to write [[legendre-essai](#ref-legendre-essai)].
+
+## Statement or definition
 
 Let \(p\) be an odd prime and \(a \in \Z\). The **Legendre symbol** \(\legendre{a}{p}\) is defined by
 
@@ -50,27 +56,39 @@ Let \(p\) be an odd prime and \(a \in \Z\). The **Legendre symbol** \(\legendre{
 
 When \(\legendre{a}{p} = 1\) one says that \(a\) is a **quadratic residue** modulo \(p\) (nonzero); when the value is \(-1\), a **quadratic nonresidue**.
 
-## Euler’s criterion
-
 **Theorem (Euler’s criterion).** If \(p\) is an odd prime and \(p \nmid a\), then
 
 \[
 a^{(p-1)/2} \equiv \legendre{a}{p} \pmod{p}.
 \]
 
+## Approach and proof
+
+<!-- Status: modern cyclic-group proof; relation to history: Euler studied power-residue criteria; the \(\F_p^\times\) packaging is textbook-modern, not a transcription of an Euler paper. Admitted auxiliaries: Fermat’s little theorem; cyclicity of \(\F_p^\times\). -->
+
 <div class="theorem-block theorem-block--proof">
-<p class="theorem-label">Proof sketch.</p>
+<p class="theorem-label">Proof.</p>
 <p>
-By Fermat’s little theorem, \(a^{p-1} \equiv 1 \pmod{p}\), so \(a^{(p-1)/2} \equiv \pm 1 \pmod{p}\). The multiplicative group \(\F_p^\times\) is cyclic of even order \(p-1\). Writing \(a \equiv g^k \pmod{p}\) for a generator \(g\), one has \(a^{(p-1)/2} \equiv (g^{(p-1)/2})^k \equiv (-1)^k \pmod{p}\). Squares are exactly the even powers of \(g\), so \((-1)^k = \legendre{a}{p}\).
+By Fermat’s little theorem (admitted), \(a^{p-1} \equiv 1 \pmod{p}\), so \(a^{(p-1)/2} \equiv \pm 1 \pmod{p}\). The multiplicative group \(\F_p^\times\) is cyclic of even order \(p-1\) (admitted). Writing \(a \equiv g^k \pmod{p}\) for a generator \(g\), one has \(a^{(p-1)/2} \equiv (g^{(p-1)/2})^k \equiv (-1)^k \pmod{p}\). Squares are exactly the even powers of \(g\), so \((-1)^k = \legendre{a}{p}\).
 </p>
 </div>
 
-## Immediate consequences
+Older proofs often argued via factorisations of \(X^{p-1}-1\) in \(\F_p[X]\) [[ireland-rosen-ec](#ref-ireland-rosen-ec)]; the cyclic-group argument above is chosen for brevity once cyclicity is granted.
+
+## Example
+
+Immediate reading consequences of the criterion (and of the definition):
 
 - There are equally many nonzero residues and nonresidues modulo \(p\), namely \((p-1)/2\) of each.
-- Multiplicativity: \(\legendre{ab}{p} = \legendre{a}{p}\legendre{b}{p}\).
+- Multiplicativity: \(\legendre{ab}{p} = \legendre{a}{p}\legendre{b}{p}\) (follows from the criterion, or from the definition via the cyclic-group model; details omitted here).
 - \(\legendre{-1}{p} = (-1)^{(p-1)/2}\), recovered by taking \(a = -1\).
 
-## Historical note
+## Later developments
 
-Euler investigated power residues extensively in the eighteenth century. Legendre’s symbol gave a compact notation that made reciprocity statements easy to write [[legendre-essai](#ref-legendre-essai)]. The cyclic-group proof above is modern; older proofs often argued via factorisations of \(X^{p-1}-1\) in \(\F_p[X]\) [[ireland-rosen-ec](#ref-ireland-rosen-ec)].
+Gauss’s lemma evaluates \(\legendre{a}{p}\) by counting negative least absolute residues; the law of quadratic reciprocity is the structural law for Legendre symbols of primes. Both are natural continuations from this article’s relations.
+
+## Sources
+
+- [[legendre-essai](#ref-legendre-essai)] — introduction of the symbol \((a/p)\).
+- [[ireland-rosen-ec](#ref-ireland-rosen-ec)] — modern statement and proof packaging.
+- [[euler-op](#ref-euler-op)] — pointer to Euler’s work on power residues (not a single pinpointed primary locus in this stub bibliography).

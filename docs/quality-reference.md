@@ -1,11 +1,11 @@
-> **Statut dans le dépôt.** Document autoritatif de qualité des articles (v1.0).
+> **Statut dans le dépôt.** Document autoritatif de qualité des articles (**v1.1**).
 > English project docs point here; the French text is the source of truth.
 > Validation sheet template: [`quality-validation-sheet.md`](./quality-validation-sheet.md).
-> Completed reviews: [`../reviews/`](../reviews/).
+> Completed reviews: [`../reviews/`](../reviews/). Sheets written under older criteria live in [`../reviews/archive/`](../reviews/archive/) and are **not** validations under v1.1.
 
 # Référentiel de qualité des articles — Chronologie mathématique
 
-Version 1.0 — 16 septembre 2026.
+Version 1.1 — 16 septembre 2026.
 
 Ce document sert à concevoir, rédiger et relire les articles du projet, puis à consigner une appréciation justifiée de leur qualité. Il s’applique aux articles consacrés à un résultat, une définition, une méthode, une construction ou un contre-exemple.
 
@@ -17,11 +17,38 @@ La priorité du projet est l’apprentissage des mathématiques. La chronologie 
 
 La qualité se mesure au contenu effectivement transmis. La longueur de l’article, le nombre de références et la présence de toutes les rubriques ne constituent pas, à eux seuls, des preuves de qualité.
 
+## Décisions éditoriales (v1.1)
+
+Ces décisions orientent l’exposition et complètent le principe directeur :
+
+1. **Langage moderne autorisé d’emblée.** Un résultat ancien peut être énoncé et démontré directement en langage moderne. Il n’est pas obligatoire de reconstituer d’abord la formulation historique.
+2. **Une preuve principale, choisie pour sa clarté.** La preuve principale peut être une preuve historique modernisée **ou** une preuve moderne différente. On choisit l’exposition la plus éclairante et l’on indique explicitement sa relation à la contribution historique (reformulation, modernisation d’une preuve publiée, autre stratégie, etc.).
+3. **Pas de double présentation obligatoire.** Il n’est pas demandé de présenter d’abord une version historique puis une version moderne. Une seule exposition cohérente suffit.
+4. **Justification complète dans « Approach and proof ».** La justification complète appartient à la rubrique **Approach and proof** (ou à son équivalent regroupé). Elle est **complète relativement aux prérequis annoncés** et aux résultats auxiliaires **explicitement admis**. On n’exige pas de redémontrer les fondements de ces prérequis.
+5. **Example (facultatif).** L’ancienne rubrique « Immediate payoff » devient **Example**. Elle est optionnelle ; un exemple peut aussi être intégré ailleurs (énoncé, preuve, commentaires). S’il est intégré ailleurs, le contenu correspondant reste évalué sous le critère C4.
+6. **Comments (facultatif).** L’ancienne rubrique « Modern viewpoint » devient **Comments**. Elle est optionnelle (remarques, variantes, point de vue structurel, limites). Si des commentaires sont intégrés ailleurs, le contenu correspondant reste évalué sous C5.
+7. **Exactitude, fidélité historique et traçabilité.** Ces exigences s’appliquent à l’ensemble de l’article, indépendamment du choix d’une preuve modernisée ou d’une preuve moderne différente.
+
+## Structure type d’un article
+
+Sur le site anglais, les titres de section sont en anglais. Le modèle adaptable ci-dessous guide la rédaction ; les rubriques peuvent être regroupées lorsque cela améliore l’exposition, et les rubriques optionnelles vides sont omises. **Pas de titres vides ni de remplissage.**
+
+| Rubrique (EN) | Fonction | Obligatoire ? |
+| --- | --- | --- |
+| **Landmarks** | Cadrage : titre, résumé, auteurs, domaine, dates, prérequis — via le **frontmatter / en-tête du site**. Ne **pas** dupliquer ces informations dans le corps. | Métadonnées oui ; **pas** de section corps « Landmarks » (commentaire HTML court autorisé dans le modèle). |
+| **Motivation and history** | Problème, obstacle, contexte historique (C1). | Oui (ou regroupement identifiable). |
+| **Statement or definition** | Apport mathématique en langage moderne (C2). | Oui (ou regroupement identifiable). |
+| **Approach and proof** | Idée centrale + **justification complète** relative aux prérequis et résultats admis (C3). | Oui (cœur pédagogique). |
+| **Example** | Illustration ou application immédiate (C4). | **Optionnel** — omettre si vide. |
+| **Comments** | Remarques, variantes, éclairage moderne complémentaire (C5). | **Optionnel** — omettre si vide. |
+| **Later developments** | Prolongements et liens typés (C6). | Oui (ou regroupement identifiable). |
+| **Sources** | Références et traçabilité (C7). | Oui (souvent aussi via frontmatter `references`). |
+
+Les fonctions des rubriques regroupées doivent rester identifiables à la relecture. L’omission d’une rubrique optionnelle vide est normale ; elle peut entraîner l’état **Non applicable** pour C4 ou C5 lorsque aucun contenu correspondant n’existe ailleurs non plus.
+
 ## Mode d’emploi
 
-Avant la rédaction, définir le lecteur visé, le problème central et l’acquis attendu. Pendant la rédaction, utiliser les critères C0 à C7. Après rédaction, remplir la fiche de validation figurant à la fin du document.
-
-Les rubriques peuvent être regroupées lorsque cela améliore l’exposition. Leurs fonctions doivent alors rester identifiables. Une rubrique sans apport propre peut être omise avec justification ; l’omission ne dispense pas de satisfaire l’objectif correspondant ailleurs lorsque celui-ci est nécessaire.
+Avant la rédaction, définir le lecteur visé, le problème central et l’acquis attendu. Pendant la rédaction, utiliser les critères C0 à C7. Après rédaction, remplir la fiche de validation ([`quality-validation-sheet.md`](./quality-validation-sheet.md)) et la déposer sous `reviews/`.
 
 L’évaluation porte sur une version précise de l’article. Pour chaque critère, le relecteur indique un état et une justification localisée :
 
@@ -31,7 +58,7 @@ L’évaluation porte sur une version précise de l’article. Pour chaque crit�
 | Partiel | Une partie de l’exigence est remplie ; ce qui manque est identifié. |
 | Non satisfait | Un défaut précis empêche de remplir l’exigence. |
 | Non vérifié | Le contrôle n’a pas été effectué ou les éléments disponibles ne permettent pas de conclure. |
-| Non applicable | L’exigence n’a pas de fonction pour cet article ; la raison est donnée. |
+| Non applicable | L’exigence n’a pas de fonction pour cet article ; la raison est donnée. (Usage typique pour C4/C5 lorsque Example/Comments sont absents et non intégrés ailleurs.) |
 
 « Satisfait » doit renvoyer à un passage, un calcul, une référence ou une vérification concrète. Une simple déclaration de l’auteur ne suffit pas à attester la qualité.
 
@@ -39,11 +66,13 @@ L’évaluation porte sur une version précise de l’article. Pour chaque crit�
 
 **Objectif : le lecteur sait ce qu’il va apprendre et de quelles connaissances il a besoin.**
 
+Les repères (titre, résumé, auteurs historiques, domaine, dates / landmark, prérequis) sont fournis par le frontmatter et l’en-tête du site. Ils ne sont pas recopiés dans une section corps « Landmarks ».
+
 Critères :
 
 - Le titre désigne un apport mathématique suffisamment précis.
 - Le résumé annonce le problème et le gain attendu.
-- Les prérequis correspondent aux outils réellement employés. Les prérequis supplémentaires de la relecture moderne sont distingués de ceux du corps principal.
+- Les prérequis correspondent aux outils réellement employés dans le corps principal (notamment dans **Approach and proof**). Les prérequis supplémentaires éventuels d’un commentaire ou d’une remarque avancée sont distingués.
 - Les dates et attributions ont une signification explicite : formulation, publication, démonstration, généralisation, etc. Une incertitude est conservée comme telle.
 - Le périmètre est maîtrisé : l’article possède une idée centrale identifiable. Les résultats secondaires servent cette idée.
 
@@ -57,16 +86,16 @@ Critères :
 
 Les informations de cadrage ne doivent pas révéler d’écart majeur entre les connaissances annoncées et celles effectivement requises.
 
-## C1 — Problème et contexte historique
+## C1 — Motivation and history (problème et contexte)
 
 **Objectif : le lecteur comprend clairement la raison d’être de l’article avant de connaître la solution.**
 
 Critères :
 
 - Le problème est formulé assez précisément pour qu’on reconnaisse ce qui constituerait une réponse.
-- Son intérêt est accessible avec les prérequis annoncés : calcul à effectuer, construction à réaliser, phénomène à expliquer, classification à établir, difficulté logique à résoudre, etc.
-- L’obstacle est expliqué. Il peut s’agir d’une impossibilité, d’une méthode trop lourde, d’un manque d’unification ou d’une compréhension insuffisante.
-- Un exemple ou une situation explicite rend l’objectif concret lorsque l’énoncé général ne suffit pas.
+- Son intérêt est accessible avec les prérequis annoncés.
+- L’obstacle est expliqué (impossibilité, méthode trop lourde, manque d’unification, compréhension insuffisante, etc.).
+- Un exemple ou une situation explicite rend l’objectif concret lorsque l’énoncé général ne suffit pas (cet exemple peut aussi figurer sous **Example** ou ailleurs).
 - Le contexte historique contribue à comprendre le problème et les outils disponibles. Les affirmations sur les motivations effectives d’un auteur sont documentées.
 - Une motivation reconstruite pour le lecteur est présentée comme telle, sans être attribuée indûment aux acteurs historiques.
 
@@ -74,130 +103,127 @@ Critères :
 
 **Insuffisance typique :** annoncer qu’une notion est « fondamentale » ou « très utilisée aujourd’hui » sans rendre intelligible la question à laquelle elle répond.
 
-## C2 — Résultat ou notion nouvelle
+## C2 — Statement or definition (résultat ou notion)
 
 **Objectif : le lecteur sait exactement quel apport mathématique est présenté.**
 
 Critères :
 
-- L’énoncé ou la définition est formulé en langage moderne, avec les objets, domaines, hypothèses et quantificateurs nécessaires.
-- La portée de l’apport est claire : existence, unicité, classification, procédure de calcul, critère, nouvelle notion, impossibilité, etc.
+- L’énoncé ou la définition est formulé en langage moderne, avec les objets, domaines, hypothèses et quantificateurs nécessaires. Un résultat ancien **peut** être énoncé ainsi d’emblée.
+- La portée de l’apport est claire : existence, unicité, classification, procédure, critère, nouvelle notion, impossibilité, etc.
 - Les notations sont définies avant leur utilisation et restent cohérentes.
-- Un exemple permet de lire l’énoncé ou de reconnaître les objets définis. Un cas limite ou un contre-exemple est ajouté lorsqu’il éclaire une hypothèse.
-- L’article distingue la contribution historique de la version exposée : changement de notation, reformulation équivalente, restriction pédagogique, extension de généralité ou correction ultérieure.
+- Un exemple permet de lire l’énoncé ou de reconnaître les objets définis lorsqu’il est utile (rubrique **Example** ou intégration locale).
+- L’article distingue la contribution historique de la version exposée : changement de notation, reformulation équivalente, restriction pédagogique, extension de généralité ou correction ultérieure — **sans** imposer une double présentation historique puis moderne.
 - La description de ce qui a été accompli n’attribue pas rétrospectivement aux auteurs les concepts introduits seulement dans la relecture moderne.
 
-Pour une définition, expliquer ce qu’elle rassemble ou distingue et pourquoi ses conditions sont utiles. Pour un algorithme, préciser ses entrées, ses sorties et les conditions de validité ou de terminaison pertinentes.
+Pour une définition, expliquer ce qu’elle rassemble ou distingue. Pour un algorithme, préciser entrées, sorties et conditions de validité ou de terminaison pertinentes.
 
 **Vérification :** le lecteur peut-il reformuler l’apport sans ambiguïté et décider s’il s’applique à un exemple proposé ?
 
 **Insuffisance typique :** présenter une formule correcte sans préciser à quels objets elle s’applique ou ce qu’elle affirme.
 
-## C3 — Raisonnement en langage moderne
+## C3 — Approach and proof (idée, raisonnement et justification complète)
 
-**Objectif : le lecteur acquiert le mécanisme d’une idée et une manière de raisonner. Cette partie constitue le cœur pédagogique de l’article.**
+**Objectif : le lecteur acquiert le mécanisme d’une idée, une manière de raisonner, et une justification mathématique complète relativement aux prérequis déclarés. Cette partie constitue le cœur pédagogique de l’article.**
+
+Ce critère absorbe l’exigence de **justification complète** autrefois associée à une rubrique « Modern viewpoint » / C5 distincte. La rigueur et la complétude des dépendances se contrôlent **ici**, dans la preuve principale (ou son regroupement).
 
 Critères :
 
 - L’idée directrice est identifiable et articulée au problème initial.
-- La preuve possède une progression compréhensible : les objectifs intermédiaires et leur contribution au résultat sont expliqués.
-- Les constructions décisives sont motivées. Le lecteur comprend ce qu’un objet auxiliaire permet de conserver, comparer, transformer, éliminer ou mesurer.
-- Les notations sont allégées lorsque cela facilite la lecture, sans supprimer une distinction mathématiquement nécessaire.
-- Les étapes qui concentrent la difficulté sont développées. Les détails routiniers peuvent être abrégés si le lecteur visé dispose des moyens de les reconstituer.
-- Les exemples illustrent les étapes abstraites utiles ; ils ne tiennent pas lieu de démonstration d’un énoncé général.
-- Les dépendances sont explicites : ce qui est démontré, ce qui est déjà connu et ce qui est admis sont reconnaissables.
-- Le statut de l’exposition est annoncé : preuve historique réécrite, raisonnement de découverte documenté ou reconstruction pédagogique.
+- La preuve possède une progression compréhensible : objectifs intermédiaires et leur contribution au résultat.
+- Les constructions décisives sont motivées.
+- Les notations sont allégées lorsque cela facilite la lecture, sans supprimer une distinction nécessaire.
+- Les étapes difficiles sont développées ; les détails routiniers peuvent être abrégés si le lecteur visé peut les reconstituer.
+- Les exemples illustrent les étapes utiles ; ils ne tiennent pas lieu de démonstration d’un énoncé général.
+- **Dépendances explicites :** ce qui est démontré, ce qui est déjà connu (prérequis) et ce qui est **admis** (résultats auxiliaires nommés) sont reconnaissables.
+- **Justification complète relative** aux prérequis annoncés et aux résultats admis : un lecteur qualifié peut retracer les dépendances substantielles et vérifier chaque passage décisif sans devoir inventer un argument manquant. Il n’est pas demandé de redémontrer les fondements des prérequis ; il faut vérifier que les résultats invoqués suffisent et qu’aucune dépendance n’est circulaire.
+- **Statut de l’exposition annoncé :** preuve historique modernisée, autre preuve moderne, chemin de découverte documenté, ou reconstruction pédagogique — et **relation** à la contribution historique.
+- Une reconstruction peut rendre une construction intelligible sans prétendre qu’elle était inévitable. L’article n’invente pas d’essais ou d’intentions d’auteur.
+- Une affirmation provisoirement admise ou une heuristique est signalée dès sa première apparition. On ne corrige pas silencieusement un énoncé faux : on corrige l’énoncé.
 
-Une reconstruction peut rendre une construction intelligible sans prétendre qu’elle était inévitable. L’article peut reconnaître une idée ingénieuse et expliquer sa fonction, sans inventer des essais ou intentions de l’auteur.
-
-**Vérification :** le lecteur devrait pouvoir répondre à ces questions :
+**Vérification :** le lecteur devrait pouvoir répondre :
 
 - Quelle est l’idée décisive ?
 - Pourquoi introduit-on les principaux objets auxiliaires ?
 - Où intervient l’hypothèse importante ?
 - Comment refaire le raisonnement dans un cas simple ?
 - Dans quel problème voisin pourrait-on essayer la même idée ?
+- Les dépendances substantielles sont-elles toutes tracées jusqu’aux prérequis ou résultats admis ?
 
-Ces questions guident la relecture ; elles n’imposent pas une série d’exercices dans chaque article.
+**Insuffisance typique :** une suite de calculs valides sans but clair ; une explication intuitive qui masque le passage décisif ; une lacune dans le passage décisif sans résultat admis explicitement nommé.
 
-**Insuffisance typique :** une suite de calculs valides dont on ne comprend ni le choix ni le but, ou une explication intuitive qui masque le passage décisif.
+## C4 — Example (optionnel)
 
-## C4 — Ce que l’apport permet immédiatement
+**Objectif : le lecteur constate concrètement le gain ou sait lire l’apport sur un cas.**
 
-**Objectif : le lecteur constate le gain mathématique obtenu.**
+La rubrique **Example** est optionnelle. Elle peut être omise. Un exemple ou une application peut aussi être intégré dans Motivation, Statement, Approach and proof ou Comments ; **dans ce cas, le contenu reste évalué sous C4**.
 
-Critères :
+Critères (lorsque du contenu d’exemple / d’application existe) :
 
-- Un exemple, une application ou une illustration met effectivement en jeu l’idée centrale.
-- Le cas traité est assez simple pour être suivi avec les outils de l’article.
-- Le gain est explicite : calcul simplifié, existence établie, ambiguïté levée, obstruction reconnue, phénomène expliqué ou problèmes auparavant séparés réunis.
-- L’application est menée jusqu’à une conclusion interprétée.
-- Lorsque cela convient, le problème posé en introduction est repris et résolu.
-- Les limites de l’outil sont indiquées lorsqu’elles sont nécessaires pour éviter une extrapolation abusive.
+- Un exemple, une application ou une illustration met en jeu l’idée centrale ou aide à lire l’énoncé.
+- Le cas est assez simple pour être suivi avec les outils de l’article.
+- Le gain est explicite lorsqu’il s’agit d’une application (calcul simplifié, existence, obstruction reconnue, etc.), et mené jusqu’à une conclusion interprétée.
+- Les limites de l’outil sont indiquées lorsqu’elles évitent une extrapolation abusive.
 
-Distinguer une illustration de l’énoncé et une application du résultat. La première aide à comprendre ce qu’il dit ; la seconde montre ce qu’il permet d’obtenir. Pour une définition, le gain peut être une nouvelle distinction ou l’énoncé d’une propriété jusque-là difficile à formuler. Une illustration suffit si elle rend ce gain conceptuel manifeste.
+Si aucun exemple ni application n’apparaît nulle part et que l’article n’en a pas besoin pour son objectif (par exemple une note très courte, ou un énoncé déjà transparent), C4 peut être **Non applicable** avec justification.
 
-**Vérification :** peut-on compléter précisément « Grâce à cet apport, nous pouvons maintenant… » et montrer où l’article le fait ?
+**Vérification :** peut-on montrer où l’article rend l’apport concret, ou justifier pourquoi aucun exemple n’est requis ?
 
-**Insuffisance typique :** annoncer une liste d’applications sans en expliquer aucune.
+**Insuffisance typique :** annoncer une liste d’applications sans en expliquer aucune ; ou laisser C4 « Satisfait » alors qu’aucun contenu correspondant n’existe.
 
-## C5 — Point de vue moderne et justification complète
+## C5 — Comments (optionnel)
 
-**Objectif : le lecteur disposant des prérequis supplémentaires trouve une reconstitution mathématique satisfaisante et rigoureuse du contenu précédent.**
+**Objectif : le lecteur dispose, le cas échéant, de remarques utiles (variantes, éclairage structurel, limites, liens conceptuels) sans confusion avec la preuve principale.**
 
-Critères :
+La rubrique **Comments** est optionnelle. Elle remplace l’ancienne « Modern viewpoint » : elle **n’est plus** le siège obligatoire de la justification complète (celle-ci relève de C3). Des commentaires peuvent être intégrés ailleurs ; le contenu correspondant reste alors évalué sous C5.
 
-- Les prérequis supplémentaires sont indiqués.
-- Les objets et arguments antérieurs sont reliés précisément au formalisme moderne utilisé.
-- Les hypothèses nécessaires à la formulation et à la preuve sont toutes explicites.
-- Les affirmations laissées en suspens dans le corps principal sont justifiées ou ramenées à des résultats identifiés, dont l’applicabilité est vérifiée.
-- Les images intuitives et arguments heuristiques sont reliés à des énoncés exacts ; leur portée et leurs limites sont précisées.
-- Toute nouvelle abstraction apporte un éclairage identifiable : explication d’une hypothèse, unification, simplification, généralisation ou compréhension structurelle.
-- Une preuve moderne différente est distinguée de la preuve exposée précédemment ; les changements de stratégie ou d’outils sont expliqués.
+Critères (lorsque du contenu de commentaire existe) :
 
-La rigueur vaut dans tout l’article. Une affirmation provisoirement admise ou une heuristique doit être signalée dès sa première apparition. Cette partie peut compléter une justification ; elle ne doit pas corriger silencieusement un énoncé faux ou une hypothèse omise dans le corps principal.
+- Les remarques apportent un éclairage identifiable (variante de preuve, abstraction unificatrice, limite, mise en garde, lien conceptuel).
+- Les prérequis supplémentaires éventuels sont indiqués.
+- Les images intuitives sont reliées à des énoncés exacts lorsque c’est utile ; leur portée est précisée.
+- Les commentaires ne se substituent pas à une justification manquante dans **Approach and proof**.
 
-« Justification complète » signifie **complète relativement aux prérequis déclarés**. Il n’est pas demandé de redémontrer leurs fondements. Il faut néanmoins vérifier que les résultats invoqués suffisent réellement et qu’aucun argument ne dépend circulairement de la conclusion.
+Si aucun commentaire n’apparaît nulle part, C5 peut être **Non applicable** avec justification.
 
-Si le corps principal remplit déjà cette fonction, cette rubrique peut être courte ou intégrée à celui-ci. L’évaluation cite alors les passages correspondants. L’absence de rubrique séparée ne dispense pas du contrôle de rigueur.
+**Vérification :** les commentaires (s’il y en a) clarifient-ils sans diluer ni corriger en silence le corps principal ?
 
-**Vérification :** un lecteur qualifié peut-il retracer toutes les dépendances substantielles et vérifier chaque passage décisif sans devoir deviner un argument manquant ?
+**Insuffisance typique :** ajouter des termes abstraits sans correspondance avec les constructions précédentes ; ou faire porter sur C5 une preuve absente de C3.
 
-**Insuffisance typique :** ajouter des termes abstraits sans établir leur correspondance avec les constructions précédentes, ou invoquer un théorème dont les hypothèses ne sont pas vérifiées.
-
-## C6 — Développements ultérieurs et liens
+## C6 — Later developments (prolongements et liens)
 
 **Objectif : le lecteur comprend quelles questions viennent naturellement ensuite.**
 
 Critères :
 
-- Les prolongements partent d’une limite, d’un cas non traité, d’une question nouvelle ou d’une idée réutilisable de l’article.
+- Les prolongements partent d’une limite, d’un cas non traité, d’une question nouvelle ou d’une idée réutilisable.
 - Les liens précisent leur nature : généralisation, autre preuve, application, obstacle résolu, conjecture ou prérequis complémentaire.
 - Chaque lien significatif explique en une phrase pourquoi il mérite d’être suivi.
-- Les conjectures et questions ouvertes distinguent le statut à l’époque considérée et le statut contemporain lorsqu’il est mentionné. Ce dernier est vérifié et daté.
+- Les conjectures distinguent le statut à l’époque considérée et le statut contemporain lorsqu’il est mentionné (vérifié et daté).
 - Les développements postérieurs à la période principale du site sont signalés comme tels.
-- Un article encore à rédiger est présenté comme une piste future ; il n’est pas affiché comme un lien fonctionnel vers une ressource existante.
+- Un article encore à rédiger est une piste future, non un lien mort vers une ressource inexistante.
 
 **Vérification :** le lecteur peut-il expliquer pourquoi l’un des articles proposés constitue une suite naturelle ?
 
 **Insuffisance typique :** une liste de sujets du même domaine sans relation mathématique explicitée.
 
-## C7 — Sources et traçabilité
+## C7 — Sources (sources et traçabilité)
 
 **Objectif : les faits avancés et les références utilisées peuvent être contrôlés.**
 
 Critères :
 
 - Chaque affirmation historique substantielle — date, attribution, priorité, influence, motivation, contenu d’un texte — renvoie à une source qui la soutient effectivement.
-- Une priorité telle que « première preuve » est justifiée ; à défaut, l’attribution est formulée plus prudemment.
-- Les références comportent les informations permettant de les identifier, avec une page, un paragraphe, un numéro d’énoncé ou une autre localisation précise lorsque nécessaire.
+- Une priorité telle que « première preuve » est justifiée ; à défaut, formulation plus prudente.
+- Les références permettent l’identification, avec localisation précise lorsque nécessaire.
 - Les rôles des sources sont distingués : texte original, traduction, étude historique, exposition mathématique moderne.
-- La référence exacte de la version ou de la preuve reprise est indiquée. Les calculs autonomes de l’article n’exigent pas chacun une référence extérieure.
-- Les écarts entre les sources, les attributions discutées et les incertitudes pertinentes sont mentionnés.
-- La bibliographie correspond à des sources réellement utilisées. Une référence repérée mais non consultée est indiquée comme telle ; elle ne valide pas une affirmation.
-- Les citations littérales sont identifiées et les adaptations sont signalées.
+- La référence de la version ou de la preuve reprise est indiquée. Les calculs autonomes de l’article n’exigent pas chacun une référence extérieure.
+- Les écarts entre sources, attributions discutées et incertitudes pertinentes sont mentionnés.
+- La bibliographie correspond à des sources réellement utilisées. Une référence non consultée est indiquée comme telle.
+- Les citations littérales sont identifiées ; les adaptations sont signalées.
 
-Il n’est pas exigé de consulter systématiquement tous les textes originaux. Une source historique spécialisée peut suffire si elle soutient précisément l’affirmation retenue. Le niveau de détail du contrôle doit permettre de justifier ce que l’article affirme.
+Il n’est pas exigé de consulter systématiquement tous les textes originaux. Une source historique spécialisée peut suffire si elle soutient précisément l’affirmation.
 
 **Vérification :** pour chaque affirmation historique importante, peut-on retrouver le passage pertinent et comparer sa portée à celle de l’article ?
 
@@ -214,7 +240,8 @@ Ces exigences s’appliquent à l’ensemble de l’article :
 - Les longues expressions sont découpées en étapes lisibles ; le texte explicatif ordinaire reste hors des blocs mathématiques.
 - Les énoncés, preuves, exemples, remarques et résultats admis sont reconnaissables.
 - Les schémas ou figures éventuels ont une fonction précise, des conventions explicites et une légende.
-- Le rendu réel est contrôlé : formules, liens, ancres, tableaux et lecture sur écran étroit. Une validation du fichier source seule ne suffit pas à attester le rendu sur le site.
+- Le rendu réel est contrôlé : formules, liens, ancres, tableaux et lecture sur écran étroit. Une validation du fichier source seule ne suffit pas.
+- Pas de titres de section vides ni de prose de remplissage destinée seulement à « compléter » le modèle.
 
 Une prose élégante ne compense pas un défaut mathématique ; une preuve exacte doit aussi être lisible par le public annoncé.
 
@@ -222,16 +249,16 @@ Une prose élégante ne compense pas un défaut mathématique ; une preuve exact
 
 1. **Fixer le périmètre.** Identifier la version examinée, le niveau visé, le résultat central et les sources accessibles.
 2. **Examiner la progression pédagogique.** Reconstituer le problème, l’obstacle, l’idée et le gain sans recopier le résumé de l’auteur.
-3. **Contrôler les mathématiques.** Vérifier les hypothèses et chaque passage décisif ; refaire les calculs centraux et l’application ; rechercher les dépendances circulaires.
+3. **Contrôler les mathématiques (C3 au centre).** Vérifier les hypothèses, chaque passage décisif, les résultats admis, l’absence de circularité ; refaire les calculs centraux et l’exemple / application s’il en existe (C4).
 4. **Contrôler les faits historiques.** Comparer les affirmations substantielles aux passages sources. Consigner séparément les éléments non vérifiés.
-5. **Examiner les prolongements et le rendu.** Vérifier le sens des liens proposés et la présentation effectivement affichée.
-6. **Consigner une décision.** Justifier les états attribués et distinguer corrections indispensables et améliorations facultatives.
+5. **Examiner les prolongements, commentaires éventuels et le rendu.** Vérifier le sens des liens (C6), l’utilité des comments (C5) s’il y en a, et la présentation affichée.
+6. **Consigner une décision.** Justifier les états attribués (y compris **Non applicable** pour C4/C5 le cas échéant) et distinguer corrections indispensables et améliorations facultatives.
 
-Une relecture assistée par une IA doit être identifiée comme telle. Elle ne doit pas être présentée comme une relecture humaine indépendante. De même, une estimation de l’intelligibilité ne constitue pas un essai auprès de lecteurs : si un tel essai a eu lieu, indiquer le profil du lecteur, la tâche proposée et le résultat observé.
+Une relecture assistée par une IA doit être identifiée comme telle. Elle ne doit pas être présentée comme une relecture humaine indépendante. Une estimation d’intelligibilité ne constitue pas un essai auprès de lecteurs : si un tel essai a eu lieu, indiquer le profil, la tâche et le résultat observé.
 
 ## Décision éditoriale
 
-**Prêt à publier** : les exigences essentielles applicables sont satisfaites, les passages décisifs et faits historiques substantiels ont été vérifiés, et aucun défaut bloquant n’est ouvert.
+**Prêt à publier** : les exigences essentielles applicables sont satisfaites, les passages décisifs et faits historiques substantiels ont été vérifiés, et aucun défaut bloquant n’est ouvert. L’absence de rubriques **Example** ou **Comments** n’est pas bloquante en soi si C4/C5 sont justement **Non applicable** ou couverts ailleurs.
 
 **À réviser** : un défaut identifié compromet l’objectif pédagogique, la validité mathématique, la fidélité historique ou l’accès au contenu.
 
@@ -245,16 +272,18 @@ Sont notamment bloquants :
 - Une dépendance circulaire.
 - Une reconstruction pédagogique présentée comme un fait historique.
 - Une attribution, une citation ou une date importante non étayée.
-- Une application centrale incorrecte.
+- Une application ou un exemple central incorrect (lorsqu’il est présent).
 - Une présentation qui rend une partie essentielle illisible.
 
 Les imperfections mineures de style peuvent être consignées sans bloquer la publication. Une note globale ou une moyenne ne peut pas compenser un défaut bloquant.
 
 L’attestation décrit les contrôles accomplis sur une version précise. Après une modification substantielle d’un énoncé, d’une preuve, d’une attribution ou d’une application, les contrôles correspondants doivent être renouvelés.
 
+Les fiches rédigées sous une version antérieure du référentiel (notamment v1.0) ne valident pas une publication au titre de la v1.1 ; elles peuvent être conservées dans `reviews/archive/` à titre d’archive uniquement.
+
 ## Fiche de validation à compléter
 
-Copier cette fiche pour chaque relecture. Conserver les justifications et la décision avec l’identifiant de version de l’article.
+Copier la fiche modèle [`quality-validation-sheet.md`](./quality-validation-sheet.md) pour chaque relecture (ou la table ci-dessous). Conserver les justifications et la décision avec l’identifiant de version de l’article.
 
 ### Identification
 
@@ -263,8 +292,9 @@ Copier cette fiche pour chaque relecture. Conserver les justifications et la dé
 - **Date de relecture :**
 - **Relecteur :**
 - **Nature de la relecture :** humaine, assistée par IA ou entièrement automatisée.
+- **Référentiel :** v1.1
 - **Public et prérequis principaux :**
-- **Prérequis de la relecture moderne :**
+- **Prérequis supplémentaires (comments / remarques avancées), le cas échéant :**
 - **Périmètre effectivement examiné :**
 
 ### Contrat pédagogique
@@ -280,12 +310,12 @@ Copier cette fiche pour chaque relecture. Conserver les justifications et la dé
 | Critère | État | Passage ou contrôle justifiant l’évaluation | Correction nécessaire |
 | --- | --- | --- | --- |
 | C0 — Repères et périmètre | À compléter | | |
-| C1 — Problème et contexte | À compléter | | |
-| C2 — Résultat ou notion | À compléter | | |
-| C3 — Raisonnement et idée acquise | À compléter | | |
-| C4 — Gain immédiat | À compléter | | |
-| C5 — Justification moderne complète | À compléter | | |
-| C6 — Prolongements | À compléter | | |
+| C1 — Motivation and history | À compléter | | |
+| C2 — Statement or definition | À compléter | | |
+| C3 — Approach and proof (idée + justification complète) | À compléter | | |
+| C4 — Example (optionnel ; peut être Non applicable) | À compléter | | |
+| C5 — Comments (optionnel ; peut être Non applicable) | À compléter | | |
+| C6 — Later developments | À compléter | | |
 | C7 — Sources et traçabilité | À compléter | | |
 | Lisibilité et rendu effectif | À compléter | | |
 
@@ -312,5 +342,4 @@ Copier cette fiche pour chaque relecture. Conserver les justifications et la dé
 
 ### Formule d’attestation
 
-> Pour la version identifiée ci-dessus, j’ai effectué les contrôles décrits dans cette fiche. La décision retenue est : **[décision]**. Elle repose sur **[éléments précis]**. Les réserves et contrôles restant à effectuer sont **[liste ou mention « aucun dans le périmètre examiné »]**. Cette appréciation porte sur le périmètre et le niveau de lecture indiqués.
-
+> Pour la version identifiée ci-dessus, j’ai effectué les contrôles décrits dans cette fiche selon le référentiel **v1.1**. La décision retenue est : **[décision]**. Elle repose sur **[éléments précis]**. Les réserves et contrôles restant à effectuer sont **[liste ou mention « aucun dans le périmètre examiné »]**. Cette appréciation porte sur le périmètre et le niveau de lecture indiqués.
