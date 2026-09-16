@@ -37,7 +37,7 @@ references:
 updated: 2026-09-16
 ---
 
-<!-- Landmarks: frontmatter/header only. Migration note: Approach and proof is intentionally high-level; full lattice-count expansion deferred — see docs/editorial-migration-notes.md. -->
+<!-- Landmarks: frontmatter/header only. Migration note: lattice-count is an open C3 gap on this theorem page — explain it here or narrow the announced object; a future article does not satisfy C3. See docs/editorial-migration-notes.md. -->
 
 ## Motivation and history
 
