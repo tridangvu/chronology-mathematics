@@ -138,6 +138,7 @@ Critères :
 - Les exemples illustrent les étapes utiles ; ils ne tiennent pas lieu de démonstration d’un énoncé général.
 - **Dépendances explicites :** ce qui est démontré, ce qui est déjà connu (prérequis) et ce qui est **admis** (résultats auxiliaires nommés) sont reconnaissables.
 - **Justification complète relative** aux prérequis annoncés et aux résultats admis : un lecteur qualifié peut retracer les dépendances substantielles et vérifier chaque passage décisif sans devoir inventer un argument manquant. Il n’est pas demandé de redémontrer les fondements des prérequis ; il faut vérifier que les résultats invoqués suffisent et qu’aucune dépendance n’est circulaire.
+- **Passage décisif :** le passage décisif annoncé comme objet de l’article doit être expliqué ; un renvoi à un futur article ne suffit pas.
 - **Statut de l’exposition annoncé :** preuve historique modernisée, autre preuve moderne, chemin de découverte documenté, ou reconstruction pédagogique — et **relation** à la contribution historique.
 - Une reconstruction peut rendre une construction intelligible sans prétendre qu’elle était inévitable. L’article n’invente pas d’essais ou d’intentions d’auteur.
 - Une affirmation provisoirement admise ou une heuristique est signalée dès sa première apparition. On ne corrige pas silencieusement un énoncé faux : on corrige l’énoncé.
@@ -151,7 +152,7 @@ Critères :
 - Dans quel problème voisin pourrait-on essayer la même idée ?
 - Les dépendances substantielles sont-elles toutes tracées jusqu’aux prérequis ou résultats admis ?
 
-**Insuffisance typique :** une suite de calculs valides sans but clair ; une explication intuitive qui masque le passage décisif ; une lacune dans le passage décisif sans résultat admis explicitement nommé.
+**Insuffisance typique :** une suite de calculs valides sans but clair ; une explication intuitive qui masque le passage décisif ; une lacune dans le passage décisif sans résultat admis explicitement nommé ; annoncer comme objet de l’article un passage décisif puis le renvoyer à un futur article sans l’expliquer ici.
 
 ## C4 — Example (optionnel)
 
@@ -269,6 +270,7 @@ Sont notamment bloquants :
 - Un problème ou un apport central impossible à identifier.
 - Un énoncé faux, ambigu de manière substantielle ou privé d’une hypothèse nécessaire.
 - Une lacune dans le passage décisif, sans résultat admis explicitement identifié pour la combler.
+- Un passage décisif annoncé comme objet de l’article qui n’est pas expliqué (un renvoi à un futur article ne suffit pas).
 - Une dépendance circulaire.
 - Une reconstruction pédagogique présentée comme un fait historique.
 - Une attribution, une citation ou une date importante non étayée.

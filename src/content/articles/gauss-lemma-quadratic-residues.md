@@ -61,7 +61,9 @@ In particular, \(a\) is a quadratic residue modulo \(p\) if and only if \(\mu\) 
 
 ## Approach and proof
 
-<!-- Status: modern textbook packaging of Gauss’s counting argument; relation to the historical contribution: same counting idea as in DA, rewritten in \(\F_p\) language. -->
+<!-- Status scaffolding for authors/agents; reader-facing status is in the opening paragraph below. -->
+
+What follows is a modern textbook packaging of Gauss’s counting argument: the same counting idea as in the *Disquisitiones Arithmeticae*, rewritten in \(\F_p\) language rather than transcribed from the Latin text.
 
 Work in the field \(\F_p\). The integers
 
@@ -101,7 +103,7 @@ The same counting can be phrased with representatives in \(\{1,\dots,p-1\}\) and
 
 ## Later developments
 
-Gauss used the lemma as a step toward the law of quadratic reciprocity; see the article on that law for the dependence and for the open task of fully expanding the lattice-count bookkeeping.
+Gauss used the lemma as a step toward the law of quadratic reciprocity; see that article for the dependence. Expanding the lattice-count comparison that finishes a Gauss-lemma proof of reciprocity remains work on the reciprocity page (an open C3 gap there), not a defect of the present lemma.
 
 ## Sources
 

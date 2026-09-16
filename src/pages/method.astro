@@ -21,8 +21,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <li><code>unknown</code> — date unknown (<code>sortKey: null</code>), with a note.</li>
   </ul>
   <p>
-    Landmark metadata (title, summary, authors, domain, dates, prerequisites) appears in the
+    Landmark metadata (title, summary, authors, domain, dates) appears in the
     article header from frontmatter; it is not duplicated as a body section.
+    When set, <code>landmark.note</code> (dating significance) is shown as visible
+    prose in that header, with precision when it is not <code>exact</code>.
+    <strong>Reading prerequisites</strong> appear before the table of contents and
+    before the article body, so the reader sees them before reading. Relations and
+    continuations remain in a footer section after the body.
   </p>
 
   <h2>Article structure</h2>

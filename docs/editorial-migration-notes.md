@@ -28,19 +28,24 @@ Landmarks remain frontmatter/header only (no body section).
 ### `euler-criterion-legendre-symbol.md` (published)
 
 - Approach and proof relies on **Fermat’s little theorem** and **cyclicity of \(\mathrm{F}_p^\times\)** without naming them as announced prerequisites in frontmatter (prerequisites list is empty). Either add reading prerequisites / admit these results explicitly, or expand the justification — C3 relative to declared prerequisites is currently thin.
-- Immediate consequences were folded into **Example**; multiplicativity is asserted without proof (acceptable if admitted, but should be flagged as such for C3).
+- Immediate consequences belong after the proof under a non-Example heading; multiplicativity should be flagged as admitted/asserted if left without proof. Prefer one concrete numerical **Example** using Euler’s criterion.
 - Later developments / Sources added from existing relations/references; historical depth remains light.
 - No v1.1 validation sheet yet.
 
 ### `quadratic-reciprocity-law.md` (published)
 
-- Approach and proof remains an **intentional high-level sketch** (lattice-count bookkeeping deferred). The article already notes incompleteness of the expanded elementary proof — this is a known **C3 gap** for a fully self-contained justification; either keep as survey-with-pointer and admit Ireland–Rosen §5.3 explicitly as the locus of the missing steps, or expand in a follow-up article.
+- **C3 decisive-passage rule:** the passage announced as the object of the article must be explained; a pointer to a future article does **not** satisfy C3. For this theorem article, the object is the reciprocity law itself; the decisive lattice-count comparison is therefore part of what must be explained here (or the announced object must be narrowed).
+- Approach and proof remains a **high-level sketch**: the lattice-count bookkeeping is **not** yet explained in this article. Deferring that count to a future expanded article does **not** resolve C3 for the present theorem page. Remaining work: explain the decisive lattice-count passage in this article, **or** narrow the article’s announced object (e.g. to a survey of dependencies) so that the missing bookkeeping is no longer the announced decisive passage. Citing Ireland–Rosen §5.3 remains useful as a source pointer, but it is not a substitute for explaining the decisive step when the theorem is the object.
 - Supplementary laws are stated without proof (admit or link).
 - No v1.1 validation sheet yet.
 
 ### `draft-wilson-theorem-note.md` (draft)
 
 - Still a stub for draft-exclusion testing. Light heading touch only; scientific content not developed. Remains `draft`.
+
+## C3 — Decisive passage (référentiel)
+
+Le passage décisif annoncé comme objet de l’article doit être expliqué ; un renvoi à un futur article ne suffit pas. This applies in particular to theorem articles whose stated object is the theorem itself: deferring the decisive argument to a later page leaves an open C3 gap on the present page.
 
 ## Policy
 

@@ -65,14 +65,16 @@ Together with multiplicativity of the Legendre symbol, these rules compute \(\le
 
 ## Approach and proof
 
-<!-- Status: high-level modern sketch of a Gauss-lemma route; relation to history: one of Gauss’s classical strategies, not a full transcription of DA. Admitted: Gauss’s lemma, Euler’s criterion; full lattice-count identities deferred to Ireland–Rosen §5.3 (or a future expanded article). -->
+<!-- Status scaffolding: high-level modern sketch of a Gauss-lemma route; relation to history: one of Gauss’s classical strategies, not a full transcription of DA. Admitted: Gauss’s lemma, Euler’s criterion. The decisive lattice-count identities are not yet explained here (open C3 gap). -->
 
-Fix an odd prime \(q\) and apply Gauss’s lemma to \(\legendre{q}{p}\). The count \(\mu\) of negative least absolute residues of \(q,2q,\dots,\tfrac{p-1}{2}q\) can be expressed using lattice-point counts in a rectangle. Comparing the symmetric count for \(\legendre{p}{q}\) yields the sign \((-1)^{(p-1)(q-1)/4}\). Full bookkeeping appears in Ireland–Rosen §5.3 [[ireland-rosen-qr](#ref-ireland-rosen-qr)]; the present article records the logical dependence on Gauss’s lemma and Euler’s criterion and does not expand every lattice-count identity.
+The exposition below is a high-level modern sketch of a Gauss-lemma route (one of Gauss’s classical strategies), not a full transcription of the *Disquisitiones*. We admit Gauss’s lemma and Euler’s criterion.
+
+Fix an odd prime \(q\) and apply Gauss’s lemma to \(\legendre{q}{p}\). The count \(\mu\) of negative least absolute residues of \(q,2q,\dots,\tfrac{p-1}{2}q\) can be expressed using lattice-point counts in a rectangle. Comparing the symmetric count for \(\legendre{p}{q}\) yields the sign \((-1)^{(p-1)(q-1)/4}\). Ireland–Rosen §5.3 [[ireland-rosen-qr](#ref-ireland-rosen-qr)] carries out that bookkeeping in detail; the decisive lattice-count comparison is **not** expanded in the present article.
 
 <div class="theorem-block theorem-block--remark">
 <p class="theorem-label">Remark on completeness.</p>
 <p>
-This page states the law accurately and sketches the Gauss-lemma route at a high level. A fully expanded elementary proof (with every lattice-count identity) is deferred to a later article; nothing essential is marked unverified for the <em>statement</em> itself.
+This page states the law accurately and sketches the Gauss-lemma route at a high level. The decisive lattice-count passage that finishes the argument is not yet explained here: that is an open C3 gap for a theorem article whose object is the law itself. A pointer to Ireland–Rosen (or to a future expanded write-up) does not satisfy that requirement; remaining work is to explain the lattice-count here, or to narrow the announced object of this page. The <em>statement</em> itself is not marked unverified.
 </p>
 </div>
 
@@ -82,7 +84,7 @@ For \(p = 7\) and \(q = 3\): both are \(3 \pmod{4}\), so reciprocity predicts \(
 
 ## Later developments
 
-Many further proofs and reciprocity laws (cubic, biquadratic, Eisenstein, …) are surveyed by Lemmermeyer [[lemermeyer](#ref-lemermeyer)]. On this site, the natural reading path is Euler’s criterion → Gauss’s lemma → the present law; an expanded elementary proof article remains a future path.
+Many further proofs and reciprocity laws (cubic, biquadratic, Eisenstein, …) are surveyed by Lemmermeyer [[lemermeyer](#ref-lemermeyer)]. On this site, the natural reading path is Euler’s criterion → Gauss’s lemma → the present law. Expanding the lattice-count comparison on this page (or narrowing the page’s announced object) remains work for C3; a separate future article is optional scaffolding, not a substitute for explaining the decisive passage announced here.
 
 ## Sources
 

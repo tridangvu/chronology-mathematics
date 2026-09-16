@@ -64,7 +64,9 @@ a^{(p-1)/2} \equiv \legendre{a}{p} \pmod{p}.
 
 ## Approach and proof
 
-<!-- Status: modern cyclic-group proof; relation to history: Euler studied power-residue criteria; the \(\F_p^\times\) packaging is textbook-modern, not a transcription of an Euler paper. Admitted auxiliaries: Fermat’s little theorem; cyclicity of \(\F_p^\times\). -->
+<!-- Status scaffolding for authors/agents; reader-facing status is in the opening paragraph below. -->
+
+The proof below is a modern cyclic-group argument. Euler studied power-residue criteria; packaging the criterion in \(\F_p^\times\) is textbook-modern, not a transcription of an Euler paper. We admit Fermat’s little theorem and the cyclicity of \(\F_p^\times\).
 
 <div class="theorem-block theorem-block--proof">
 <p class="theorem-label">Proof.</p>
@@ -75,13 +77,23 @@ By Fermat’s little theorem (admitted), \(a^{p-1} \equiv 1 \pmod{p}\), so \(a^{
 
 Older proofs often argued via factorisations of \(X^{p-1}-1\) in \(\F_p[X]\) [[ireland-rosen-ec](#ref-ireland-rosen-ec)]; the cyclic-group argument above is chosen for brevity once cyclicity is granted.
 
-## Example
+### Immediate consequences
 
-Immediate reading consequences of the criterion (and of the definition):
+From the criterion (and the definition):
 
 - There are equally many nonzero residues and nonresidues modulo \(p\), namely \((p-1)/2\) of each.
-- Multiplicativity: \(\legendre{ab}{p} = \legendre{a}{p}\legendre{b}{p}\) (follows from the criterion, or from the definition via the cyclic-group model; details omitted here).
+- Multiplicativity \(\legendre{ab}{p} = \legendre{a}{p}\legendre{b}{p}\) is asserted here without a separate write-up: it follows from the criterion (or from the cyclic-group model of the definition), and we admit that step lightly.
 - \(\legendre{-1}{p} = (-1)^{(p-1)/2}\), recovered by taking \(a = -1\).
+
+## Example
+
+Take \(p = 11\) and \(a = 3\). Euler’s criterion asks for \(3^{(11-1)/2} = 3^5\) modulo \(11\):
+
+\[
+3^2 = 9,\qquad 3^4 = 81 \equiv 4 \pmod{11},\qquad 3^5 \equiv 4\cdot 3 = 12 \equiv 1 \pmod{11}.
+\]
+
+Thus \(3^5 \equiv 1 \pmod{11}\), so \(\legendre{3}{11} = 1\): \(3\) is a quadratic residue modulo \(11\). Indeed \(5^2 = 25 \equiv 3 \pmod{11}\).
 
 ## Later developments
 

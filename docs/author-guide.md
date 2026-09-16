@@ -23,7 +23,7 @@ Before drafting, fix the intended reader, the central problem, and the expected 
 
 ### Default body structure (English headings)
 
-1. *(Landmarks via frontmatter/header only — do not duplicate in the body.)*
+1. *(Landmarks via frontmatter/header only — do not duplicate in the body. The site header shows `landmark.label`, and when set `landmark.note` as dating prose, plus precision if not `exact`. Reading prerequisites from frontmatter appear before the TOC / article body; relations and continuations stay after the body.)*
 2. **Motivation and history**
 3. **Statement or definition**
 4. **Approach and proof**

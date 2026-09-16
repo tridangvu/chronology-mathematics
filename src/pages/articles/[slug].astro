@@ -29,11 +29,13 @@ const related = article.data.relations
   })
   .filter(Boolean);
 const next = continuationsOf(article, visible);
+const landmark = article.data.landmark;
+const showPrecision = landmark.precision && landmark.precision !== 'exact';
 ---
 <BaseLayout title={article.data.title} description={article.data.summary}>
   <p class="meta">
     <a href={withBase('chronology/')}>← Chronology</a>
-    · {article.data.landmark.label}
+    · {landmark.label}
     · {article.data.type}
     {
       article.data.status === 'draft' && (
@@ -51,6 +53,43 @@ const next = continuationsOf(article, visible);
       <p class="meta">Historical authors: {article.data.historicalAuthors.join(', ')}</p>
     )
   }
+  {
+    landmark.note && (
+      <p class="meta landmark-note">
+        <strong>Dating note.</strong> {landmark.note}
+        {showPrecision && (
+          <>
+            {' '}
+            <span class="landmark-precision">({landmark.precision})</span>
+          </>
+        )}
+      </p>
+    )
+  }
+  {
+    !landmark.note && showPrecision && (
+      <p class="meta landmark-note">
+        <span class="landmark-precision">Dating precision: {landmark.precision}</span>
+      </p>
+    )
+  }
+
+  {
+    prereqs.length > 0 ? (
+      <section class="reading-prereqs" aria-label="Reading prerequisites">
+        <h2 class="reading-prereqs__title">Reading prerequisites</h2>
+        <ul>
+          {prereqs.map((p) => (
+            <li>
+              <a href={articleHref(p)}>{p.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ) : (
+      <p class="meta reading-prereqs reading-prereqs--empty">No published reading prerequisites listed.</p>
+    )
+  }
 
   <TableOfContents headings={headings} />
 
@@ -59,25 +98,9 @@ const next = continuationsOf(article, visible);
   </article>
 
   <section class="related">
-    <h2>Prerequisites &amp; continuations</h2>
+    <h2>Relations &amp; continuations</h2>
     {
-      prereqs.length > 0 ? (
-        <div>
-          <h3>Reading prerequisites</h3>
-          <ul>
-            {prereqs.map((p) => (
-              <li>
-                <a href={articleHref(p)}>{p.data.title}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <p class="meta">No published reading prerequisites listed.</p>
-      )
-    }
-    {
-      related.length > 0 && (
+      related.length > 0 ? (
         <div>
           <h3>Relations</h3>
           <ul>
@@ -90,6 +113,8 @@ const next = continuationsOf(article, visible);
             ))}
           </ul>
         </div>
+      ) : (
+        <p class="meta">No published relations listed.</p>
       )
     }
     {
