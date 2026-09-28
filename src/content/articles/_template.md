@@ -19,6 +19,7 @@ landmark:
   precision: exact # exact | approx | uncertain | unknown | bce
   # note: "optional dating note — meaning of this date (formulation / publication / proof / …)"
 prerequisites: [] # reading tools actually used in Approach and proof
+prerequisiteNotes: [] # knowledge without an article target; distinguish main proof and advanced comments
 relations: []
   # - target: other-article-id
   #   type: reading-prerequisite # reading-prerequisite | used-historically | generalizes | alternate-proof | application

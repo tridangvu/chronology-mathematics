@@ -76,6 +76,10 @@ const articles = defineCollection({
     status: z.enum(['draft', 'published']),
     landmark: landmarkDateSchema,
     prerequisites: z.array(z.string()).default([]).describe('Stable ids of reading prerequisites'),
+    prerequisiteNotes: z
+      .array(z.string().min(1))
+      .default([])
+      .describe('Reader knowledge and section-specific prerequisites without article targets'),
     relations: z.array(relationSchema).default([]),
     references: z.array(bibliographicRefSchema).default([]),
     period: z

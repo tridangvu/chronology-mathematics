@@ -75,10 +75,11 @@ const showPrecision = landmark.precision && landmark.precision !== 'exact';
   }
 
   {
-    prereqs.length > 0 ? (
+    prereqs.length > 0 || article.data.prerequisiteNotes.length > 0 ? (
       <section class="reading-prereqs" aria-label="Reading prerequisites">
         <h2 class="reading-prereqs__title">Reading prerequisites</h2>
         <ul>
+          {article.data.prerequisiteNotes.map((note) => <li>{note}</li>)}
           {prereqs.map((p) => (
             <li>
               <a href={articleHref(p)}>{p.data.title}</a>

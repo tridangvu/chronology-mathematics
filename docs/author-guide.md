@@ -41,8 +41,9 @@ Regroup when it improves exposition; never leave empty headings or filler.
    - `id`, `slug`, `title`, `summary`, `type`, `domains`, `status`, `period`
    - `landmark.label`, `landmark.sortKey`, `landmark.precision` (`exact|approx|uncertain|unknown|bce`)
    - `historicalAuthors`, `prerequisites`, `relations`, `references`
-3. Optional reserved: `problemsPath.problemTags`, `difficulty`, `exerciseIds` (no UI yet).
-4. Write the body in Markdown. Prefer modern mathematical language; cite historical claims.
+3. Optional `prerequisiteNotes`: an array of plain-text descriptions of required knowledge, shown in the reading-prerequisites header. Use this for tools without a published article; distinguish main-proof prerequisites from additional knowledge needed in advanced comments. Keep `prerequisites` for stable article ids.
+4. Optional reserved: `problemsPath.problemTags`, `difficulty`, `exerciseIds` (no UI yet).
+5. Write the body in Markdown. Prefer modern mathematical language; cite historical claims.
 
 ## Math
 

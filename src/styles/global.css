@@ -147,6 +147,12 @@ h3 {
   margin-top: 0;
 }
 
+.prose h2,
+.prose h3,
+.related li[id] {
+  scroll-margin-top: 7rem;
+}
+
 .prose p,
 .prose li {
   max-width: var(--measure);
